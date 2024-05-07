@@ -1,0 +1,55 @@
+1. We've done corner casesL
+1a. one char
+1b. one row
+1c. one column
+
+2. Lets do general case:
+for example:
+/*******\
+*       *
+*       *
+\*******/
+
+2a. Lets make two loops
+when we are in the corner, we print \ or /
+when we are on the side (x==1 or x==n), y==1 or y==m, we print *
+when we are inside, we print " "(space)
+
+2b. Lets print first column:
+/
+*
+*
+\
+
+after that we go to the second column and for the first and last char in row we put asterisk.
+/*
+*
+*
+\*
+
+we make it till the last column, and for the last column we print specific column:
+/********\
+*        *
+*        *
+\********/
+
+2c. Lets print first row:
+/********\
+
+after we print second row with only star at the beginning and end:
+/********\
+*        *
+
+we do the same till the last row, and print the last row:
+/********\
+*        *
+*        *
+\********/
+
+2d. Lets split our box into 3 parts: top line, bottom line and inner rows:
+ - top line: "/" + "**********" + "\"
+ - bottom line: "\" + "********" + "/"
+ - inner row: "*" + "         " + "*"
+ - all the rows have similarity: they have same number of columns, they just differ what is the first char, last char and internal char.
+ - so if we define function(left char, inner char, right char), we should use it for all the lines.
+
